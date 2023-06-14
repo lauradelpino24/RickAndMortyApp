@@ -12,6 +12,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
@@ -27,7 +28,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
@@ -80,8 +80,8 @@ fun Body(modifier: Modifier, loginViewModel: LoginViewModel, navController: NavC
 fun TextLogo(modifier: Modifier) {
     Text(
         text = "Rick And Morty",
-        fontStyle = FontStyle.Italic,
-        modifier = modifier
+        modifier = modifier,
+        style = MaterialTheme.typography.h1.copy(color = Color(0xFF35c9dd)),
     )
 }
 
@@ -93,7 +93,7 @@ fun LoginButton(loginEnable: Boolean, navController: NavController) {
         enabled = loginEnable,
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = Color(0xFF000000),
+            backgroundColor = Color(0xFF35c9dd),
             disabledBackgroundColor = Color(0xFF616161),
             contentColor = Color.White,
             disabledContentColor = Color.White
@@ -113,9 +113,9 @@ fun Password(password: String, onTextChanged: (String) -> Unit) {
         modifier = Modifier.fillMaxWidth(),
         placeholder = { Text("Password") },
         colors = TextFieldDefaults.textFieldColors(
-            textColor = Color(0xFFB2B2B2),
+            textColor = Color(0xFF000000),
             backgroundColor = Color(0xFFFAFAFA),
-            focusedIndicatorColor = Color.Transparent,
+            focusedIndicatorColor = Color(0xFFb2df28),
             unfocusedIndicatorColor = Color.Transparent
         ),
         singleLine = true,
@@ -150,9 +150,9 @@ fun Email(email: String, onTextChanged: (String) -> Unit) {
         singleLine = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
         colors = TextFieldDefaults.textFieldColors(
-            textColor = Color(0xFFB2B2B2),
+            textColor = Color(0xFF000000),
             backgroundColor = Color(0xFFFAFAFA),
-            focusedIndicatorColor = Color.Transparent,
+            focusedIndicatorColor = Color(0xFFb2df28),
             unfocusedIndicatorColor = Color.Transparent
         )
     )

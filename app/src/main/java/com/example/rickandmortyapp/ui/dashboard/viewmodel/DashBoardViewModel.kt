@@ -32,7 +32,7 @@ class DashBoardViewModel @Inject constructor(private val getCharactersUseCase: G
     }
 
     private val _mutableStateList =
-        MutableStateFlow<StatusData<List<Results>>>(StatusData(responseType = Status.LOADING))
+        MutableStateFlow<StatusData<List<Results>>>(StatusData(responseType = Status.SUCCESS))
     val stateList: StateFlow<StatusData<List<Results>>> = _mutableStateList.asStateFlow()
 
     fun search(query: String) {

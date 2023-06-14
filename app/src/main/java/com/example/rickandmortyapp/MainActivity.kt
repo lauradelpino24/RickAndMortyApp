@@ -5,10 +5,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -23,6 +26,10 @@ import com.example.rickandmortyapp.ui.login.viewmodel.LoginViewModel
 import com.example.rickandmortyapp.ui.theme.RickAndMortyAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
+val customFont = FontFamily(
+    Font(R.font.get_schwifty, FontWeight.Normal)
+)
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
@@ -35,7 +42,7 @@ class MainActivity : ComponentActivity() {
             RickAndMortyAppTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    color = Color(0xFF0B0543)
                 ) {
                     AppNavigation(loginViewModel, dashBoardViewModel)
                 }
@@ -80,7 +87,8 @@ fun AppNavigation(loginViewModel: LoginViewModel, dashBoardViewModel: DashBoardV
                 species = species,
                 gender = gender,
                 origin = origin,
-                image = image
+                image = image,
+                navController
             )
         }
     }
