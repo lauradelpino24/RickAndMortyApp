@@ -1,7 +1,5 @@
 package com.example.rickandmortyapp.data.network.model
 
-import com.example.example.Location
-import com.example.example.Origin
 import com.google.gson.annotations.SerializedName
 
 
