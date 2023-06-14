@@ -63,7 +63,7 @@ fun AppNavigation(loginViewModel: LoginViewModel, dashBoardViewModel: DashBoardV
                 navArgument("species") { type = NavType.StringType },
                 navArgument("gender") { type = NavType.StringType },
                 navArgument("origin") { type = NavType.StringType },
-                //navArgument("image") { type = NavType.StringType }
+                navArgument("image") { type = NavType.StringType }
 
             )
         ) { backStackEntry ->
